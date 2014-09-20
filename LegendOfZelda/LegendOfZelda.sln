@@ -1,23 +1,19 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{8707BF1B-9EBC-2470-45E7-5F2169BA9563}") = "LegendOfZelda", "Assembly-CSharp-Editor.csproj", "{DFCD31FA-747F-3379-D083-FA6F16F1C266}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DFCD31FA-747F-3379-D083-FA6F16F1C266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFCD31FA-747F-3379-D083-FA6F16F1C266}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFCD31FA-747F-3379-D083-FA6F16F1C266}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFCD31FA-747F-3379-D083-FA6F16F1C266}.Release|Any CPU.Build.0 = Release|Any CPU
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-								GlobalSection(MonoDevelopProperties) = preSolution
+										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
