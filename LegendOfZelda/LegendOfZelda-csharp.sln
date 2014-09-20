@@ -17,8 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-												GlobalSection(MonoDevelopProperties) = preSolution
+													GlobalSection(MonoDevelopProperties) = preSolution
 =======
 <<<<<<< HEAD
 								GlobalSection(MonoDevelopProperties) = preSolution
@@ -27,7 +26,7 @@ Global
 >>>>>>> Cleaned up map and basic character movement + colliders on objects
 >>>>>>> ed6cb4a... Cleaned up map and basic character movement + colliders on objects
 =======
-																		GlobalSection(MonoDevelopProperties) = preSolution
+																	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
