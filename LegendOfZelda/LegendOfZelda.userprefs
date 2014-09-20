@@ -1,8 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/CreatePlane.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerAnimator.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/Editor/CreatePlane.cs" Line="6" Column="44" />
+=======
+      <File FileName="Assets/Scripts/PlayerAnimator.cs" Line="26" Column="50" />
+>>>>>>> Cleaned up map and basic character movement + colliders on objects
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
