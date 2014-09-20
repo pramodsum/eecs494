@@ -2,11 +2,15 @@ fileFormatVersion: 2
 guid: 65aef77f6e36c4f299b7db99aafa3b55
 TextureImporter:
   fileIDToRecycleName:
+<<<<<<< HEAD:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
 <<<<<<< HEAD:LegendOfZelda/Assets/Sprites/0.png.meta
     21300000: 0
 =======
     21300000: Level1Q1BG
 >>>>>>> Cleaned up map and basic character movement + colliders on objects:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
+=======
+    21300000: Level1Q1BG
+>>>>>>> FETCH_HEAD:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,7 +50,10 @@ TextureImporter:
   spritePixelsToUnits: 16
 =======
   spritePixelsToUnits: 100
+<<<<<<< HEAD:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
 >>>>>>> Cleaned up map and basic character movement + colliders on objects:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
+=======
+>>>>>>> FETCH_HEAD:LegendOfZelda/Assets/Sprites/Level1Q1BG.png.meta
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

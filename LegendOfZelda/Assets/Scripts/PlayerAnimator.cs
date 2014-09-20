@@ -25,10 +25,9 @@ public class PlayerAnimator : MonoBehaviour
 				// 1
 				Vector3 currentPosition = transform.position;
 				// 2
-		
-				if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.LeftArrow)) {
+				if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) {
 						transform.Translate (Vector2.right * moveSpeed / 100);
-				} else if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.RightArrow)) {
+				} else if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) {
 						transform.Translate (-Vector2.right * moveSpeed / 100);
 				} else if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow)) {
 						transform.Translate (Vector2.up * moveSpeed / 100);
