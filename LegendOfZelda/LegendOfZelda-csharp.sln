@@ -17,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-													GlobalSection(MonoDevelopProperties) = preSolution
+																							GlobalSection(MonoDevelopProperties) = preSolution
 =======
 <<<<<<< HEAD
 								GlobalSection(MonoDevelopProperties) = preSolution
@@ -28,6 +28,9 @@ Global
 =======
 																	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
+=======
+											GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> mapbranch
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
