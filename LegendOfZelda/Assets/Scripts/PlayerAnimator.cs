@@ -6,18 +6,10 @@ public class PlayerAnimator : MonoBehaviour
 {
 		public Sprite[] sprites;
 		public float framesPerSecond;
-	bool collisionTrigger = false;
 		private SpriteRenderer spriteRenderer;
 	    const  float DefaultMovespeed = 7.5f;
-		public float moveSpeed;
-		private Vector3 moveDirection;
-	bool movingRight = false;
-	bool movingLeft = false;
-	bool movingUp = false;
-	bool movingDown = false;
-	bool colliding = false;
-	Vector3 colliderPosition;
-
+	const float moveSpeed = 7.5f;
+		public Vector2 movementDirection;
 
 		// Use this for initialization
 		void Start ()
@@ -27,93 +19,45 @@ public class PlayerAnimator : MonoBehaviour
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.RightArrow)) {
-			if(!(colliding && colliderPosition.x > transform.position.x)  )
-				movingRight = true;
+				movementDirection = Vector2.right;
 		} 
 		if (Input.GetKey (KeyCode.A) || Input.GetKeyDown (KeyCode.LeftArrow)) {
-			if(!(colliding && colliderPosition.x < transform.position.x)  )
-			movingLeft = true;
+			movementDirection = -Vector2.right;
 		} 
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.UpArrow)) {
-			if(!(colliding && colliderPosition.y > transform.position.y)  )
-
-			movingUp = true;
+			movementDirection = Vector2.up;
 		} 
 		if (Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.DownArrow)) {
-			if(!(colliding && colliderPosition.y < transform.position.y)  )
+			movementDirection = -Vector2.up;
+		}
 
-			movingDown = true;
-		}
-		if (Input.GetKeyUp (KeyCode.D) || Input.GetKeyUp (KeyCode.RightArrow)) {
-			movingRight = false;
-		} 
-		if (Input.GetKeyUp (KeyCode.A) || Input.GetKeyUp (KeyCode.LeftArrow)) {
-			movingLeft = false;
-		} 
-		if (Input.GetKeyUp (KeyCode.W) || Input.GetKeyUp (KeyCode.UpArrow)) {
-			movingUp = false;
-		} 
-		if (Input.GetKeyUp (KeyCode.S) || Input.GetKeyUp (KeyCode.DownArrow)) {
-			movingDown = false;
-		}
 	}
 	
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
+		if (!Input.GetKey (KeyCode.D)&& 
+		    !Input.GetKey (KeyCode.RightArrow) && 
+		    !Input.GetKey (KeyCode.A) &&
+		    !Input.GetKey (KeyCode.LeftArrow) &&
+		    !Input.GetKey (KeyCode.W) &&
+		    !Input.GetKey (KeyCode.UpArrow) &&
+		    !Input.GetKey (KeyCode.S) &&
+		    !Input.GetKey (KeyCode.DownArrow)) {
+			movementDirection = Vector2.zero;
+		}
 			//Sprite walking animations
 			int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 			index = index % sprites.Length;
 			spriteRenderer.sprite = sprites [index];
-			// 1
-			Vector3 currentPosition = transform.position;
-			// 2
-			if (movingRight) {
-				transform.Translate ( -1 * Vector2.right * moveSpeed / 100);
-			} 
-			if(movingLeft)  {
-				transform.Translate (Vector2.right * moveSpeed / 100);
-			}
-			if (movingUp) {
-				transform.Translate (Vector2.up * moveSpeed / 100);
-			} 
-			if (movingDown) {
-				transform.Translate (-1 * Vector2.up * moveSpeed / 100);
-			}
+			gameObject.GetComponent<Rigidbody2D>().velocity = movementDirection * moveSpeed;
 		}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		if(collider.tag =="Immovable"){
-			colliding = true;
-			Bounds immovableBounds = collider.GetComponent<BoxCollider2D>().bounds;
-			Ray upRay = new Ray(transform.position, Vector3.up);
-			Ray downRay = new Ray(transform.position, Vector3.down);
-			Ray leftRay = new Ray(transform.position, Vector3.left);
-			Ray rightRay = new Ray(transform.position, Vector3.right);
-			if(movingDown && immovableBounds.IntersectRay(downRay)) movingDown = false;
-			if(movingUp && immovableBounds.IntersectRay(upRay)) movingUp = false;
-			if(movingLeft && immovableBounds.IntersectRay(leftRay)) movingLeft = false;
-			if(movingRight && immovableBounds.IntersectRay(rightRay)) movingRight = false;
+		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Immovable ) {
+			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .3f;
+			movementDirection = Vector2.zero;
 		}
 	}
-
-	void OnTriggerStay2D(Collider2D collider){
-		if(collider.tag =="Immovable"){
-			colliding = true;
-			Bounds immovableBounds = collider.bounds;
-			Ray upRay = new Ray(transform.position, Vector3.up);
-			Ray downRay = new Ray(transform.position, Vector3.down);
-			Ray leftRay = new Ray(transform.position, Vector3.left);
-			Ray rightRay = new Ray(transform.position, Vector3.right);
-			if(movingDown && immovableBounds.IntersectRay(downRay)) movingDown = false;
-			if(movingUp && immovableBounds.IntersectRay(upRay)) movingUp = false;
-			if(movingLeft && immovableBounds.IntersectRay(leftRay)) movingLeft = false;
-			if(movingRight && immovableBounds.IntersectRay(rightRay)) movingRight = false;
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D collider){
-
-		colliding=false;
-	}
+	
 }
