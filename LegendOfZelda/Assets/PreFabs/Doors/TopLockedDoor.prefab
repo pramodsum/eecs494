@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75f0394d5ecd42f18479b0000cc39c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsOpen: 0
+  OpenDoorObject: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

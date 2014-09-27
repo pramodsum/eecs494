@@ -11,7 +11,6 @@ public class BatAnimator : MonoBehaviour
 		public bool movingUp = false;
 		int count = 0;
 		public int MAX_COUNT = 200;
-		bool colliding = false;
 		Vector3 colliderPosition;
 	
 	

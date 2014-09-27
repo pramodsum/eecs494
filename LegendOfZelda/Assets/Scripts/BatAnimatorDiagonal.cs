@@ -12,7 +12,6 @@ public class BatAnimatorDiagonal : MonoBehaviour
 		int count = 0;
 		public int MAX_COUNT = 100;
 		public int movementAngle = 2;
-		bool colliding = false;
 		Vector3 colliderPosition;
 	
 	
