@@ -78,6 +78,16 @@ MonoBehaviour:
   - {fileID: 21300014, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
   - {fileID: 21300008, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
   - {fileID: 21300016, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
+  attackSprites:
+  - {fileID: 21300000, guid: edcecdaef0312485ea3e84e3aa586dfd, type: 3}
+  - {fileID: 21300000, guid: d3efd656949f0494a8cb3a9478d272b5, type: 3}
+  - {fileID: 21300000, guid: 5e086f6c4ac114142a73861b889e2fbb, type: 3}
+  - {fileID: 21300000, guid: c907137c64c994996856847130e15824, type: 3}
+  hurtSprites:
+  - {fileID: 21300000, guid: 009795c81139441ebb3f0830fdb03421, type: 3}
+  - {fileID: 21300000, guid: d0ec8cdf89cfb4dedaeed03b771ca420, type: 3}
+  - {fileID: 21300000, guid: f72ab6e51bcb4488f976964ce0bd6e78, type: 3}
+  - {fileID: 21300000, guid: c9a5657c9ea7e459fad99b994e782585, type: 3}
   framesPerSecond: 10
   movementDirection: {x: 0, y: 0}
 --- !u!114 &11400002
