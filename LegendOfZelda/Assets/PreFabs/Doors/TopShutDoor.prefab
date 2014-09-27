@@ -50,10 +50,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac245a083b03f440aaffe3a88ff6e921, type: 3}
+  m_Script: {fileID: 11500000, guid: 79805bb83fb2440e0b273e27718952be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectedDoor: {fileID: 0}
+  Enemies: []
+  OpenDoorObject: {fileID: 0}
+  EnemyCount: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

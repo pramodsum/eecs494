@@ -3,13 +3,14 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour {
 
-	public int AmountOfKeys{
-		get;
-		set;
-	}
+	public int AmountOfKeys;
 
 	public bool HasKey( ){
 		return AmountOfKeys > 0;
+	}
+
+	public void UseKey( ){
+		AmountOfKeys--;
 	}
 
 	// Use this for initialization

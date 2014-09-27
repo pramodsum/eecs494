@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class LockedDoor : MonoBehaviour {
-	public bool IsOpen;
+	public GameObject OpenDoorObject;
+
 	// Use this for initialization
 	void Start () {
-		IsOpen = false;
 	}
 	
 	// Update is called once per frame
@@ -14,11 +14,10 @@ public class LockedDoor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		if( collider.tag == "Player" && collider.GetComponent<Inventory>().HasKey()){
+		if( collider.tag == "Player" && Camera.main.GetComponent<Inventory>().HasKey()){
 			collider.GetComponent<Inventory>().AmountOfKeys--;
-			gameObject.GetComponent<OpenDoor>().enabled = true;
-			gameObject.GetComponent<PhysicsObject>().enabled = false;
-			IsOpen = true;
+			OpenDoorObject.SetActive(true);
+			gameObject.SetActive(false);
 		}
 	}
 }
