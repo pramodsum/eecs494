@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public class PlayerAnimator : MonoBehaviour
 {
 	public Sprite[] sprites;
 	public float framesPerSecond;
 	private SpriteRenderer spriteRenderer;
-	const  float DefaultMovespeed = 7.5f;
-	const float moveSpeed = 7.5f;
+	const  float DefaultMovespeed = 4.8f;
+	const float moveSpeed = 4.8f;
 	public Vector2 movementDirection;
 	public Vector2 faceDirection = -Vector2.up;
 	int directionIndex = 0;
@@ -63,12 +62,31 @@ public class PlayerAnimator : MonoBehaviour
 		int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 		index = index % sprites.Length % 2;
 		spriteRenderer.sprite = sprites [directionIndex * 2 + index];
-		gameObject.GetComponent<Rigidbody2D>().velocity = movementDirection * moveSpeed;
+		Vector2 velocity = movementDirection * moveSpeed;
+		if(movementDirection == Vector2.up || movementDirection == -Vector2.up){
+			float remainder = Mathf.Abs(transform.position.x % .5f);
+			if((remainder > 0.02f  && remainder < .25f && transform.position.x < 0) || 
+			   (remainder > .27f && transform.position.x > 0)){
+				transform.Translate (.025f / 16f, 0 ,0);
+			} else {
+				transform.Translate(-0.025f / 16f, 0 ,0 );
+			}
+		} else if( movementDirection == Vector2.right || movementDirection == -Vector2.right){
+			float remainder = Mathf.Abs(transform.position.y % .5f);
+			if((remainder > 0.02f  && remainder < .25f && transform.position.y < 0) || 
+			   (remainder > .27f && transform.position.y > 0)){
+				transform.Translate (0, .025f / 16f ,0);
+			} else {
+				transform.Translate(0, -0.025f / 16f ,0 );
+			}
+
+		}
+		gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Immovable ) {
-			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .3f;
+			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .25f;
 			movementDirection = Vector2.zero;
 		}
 	}
