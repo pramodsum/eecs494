@@ -65,16 +65,18 @@ public class PlayerAnimator : MonoBehaviour
 		Vector2 velocity = movementDirection * moveSpeed;
 		if(movementDirection == Vector2.up || movementDirection == -Vector2.up){
 			float remainder = Mathf.Abs(transform.position.x % .5f);
-			if((remainder > 0.02f  && remainder < .25f && transform.position.x < 0) || 
-			   (remainder > .27f && transform.position.x > 0)){
+			Debug.Log (remainder);
+			if((remainder > 0.05f  && remainder < .25f && transform.position.x < 0) || 
+			   (remainder >= .25f && transform.position.x > 0)){
 				transform.Translate (.025f / 16f, 0 ,0);
-			} else {
-				transform.Translate(-0.025f / 16f, 0 ,0 );
+			} else if( (remainder > 0.05f && remainder < .25f && transform.position.x > 0) ||
+			          (remainder >= .25f && transform.position.x < 0)){
+				transform.Translate(-.025f / 16f, 0 ,0 );
 			}
 		} else if( movementDirection == Vector2.right || movementDirection == -Vector2.right){
 			float remainder = Mathf.Abs(transform.position.y % .5f);
 			if((remainder > 0.02f  && remainder < .25f && transform.position.y < 0) || 
-			   (remainder > .27f && transform.position.y > 0)){
+			   (remainder >= .25f && transform.position.y > 0)){
 				transform.Translate (0, .025f / 16f ,0);
 			} else {
 				transform.Translate(0, -0.025f / 16f ,0 );
@@ -86,11 +88,13 @@ public class PlayerAnimator : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.GetComponent<PhysicsObject>() == null) return;
-		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Immovable ) {
+		PhysicsObjectType objectType = collider.GetComponent<PhysicsObject>().ObjectType;
+		if( objectType == PhysicsObjectType.Immovable ||
+		    (objectType == PhysicsObjectType.Locked && !Camera.main.GetComponent<Inventory>().HasKey())) {
 			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
 			movementDirection = Vector2.zero;
 		}
-		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Enemy){
+		if( objectType == PhysicsObjectType.Enemy){
 			Camera.main.GetComponent<HealthScript>().Hit();
 			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
 			movementDirection = Vector2.zero;

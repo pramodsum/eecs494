@@ -4,6 +4,7 @@ using System.Collections;
 public enum PhysicsObjectType {
 	Movable,
 	Immovable,
+	Locked,
 	Enemy
 }
 
