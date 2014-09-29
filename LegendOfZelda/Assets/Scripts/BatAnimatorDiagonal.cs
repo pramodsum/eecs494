@@ -21,31 +21,22 @@ public class BatAnimatorDiagonal : MonoBehaviour
 				spriteRenderer = renderer as SpriteRenderer;
 		}
 	
-		void Update ()
-		{
-
-		}
-	
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
 				//Sprite walking animations
 				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 				index = index % sprites.Length;
-				spriteRenderer.sprite = sprites [index];	
-		
-				if (count == MAX_COUNT) {
-						count = 0;
-						if (movingUp) 
-								movingUp = false;
-						else
-								movingUp = true;
-				} else { 
-						count++;
-						if (movingUp)
-								transform.Translate ((Vector2.up + Vector2.right / movementAngle) * moveSpeed / 100);
-						else
-								transform.Translate (-1 * (Vector2.up + Vector2.right / movementAngle) * moveSpeed / 100);
-				}
+				spriteRenderer.sprite = sprites [index];
+				if (movingUp)
+						transform.Translate ((Vector2.up + Vector2.right / movementAngle) * moveSpeed / 100);
+				else
+						transform.Translate (-1 * (Vector2.up + Vector2.right / movementAngle) * moveSpeed / 100);
+		}
+	
+		void OnTriggerEnter2D (Collider2D collider)
+		{
+				//Change direction when enemy collides with something
+				movingUp = !movingUp;
 		}
 }

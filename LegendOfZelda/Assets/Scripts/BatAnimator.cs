@@ -33,18 +33,15 @@ public class BatAnimator : MonoBehaviour
 				index = index % sprites.Length;
 				spriteRenderer.sprite = sprites [index];
 
-				if (count == MAX_COUNT) {
-						count = 0;
-						if (movingUp) 
-								movingUp = false;
-						else
-								movingUp = true;
-				} else { 
-						count++;
-						if (movingUp)
-								transform.Translate (Vector2.up * moveSpeed / 100);
-						else
-								transform.Translate (-1 * Vector2.up * moveSpeed / 100);
-				}
+				if (movingUp)
+						transform.Translate (Vector2.up * moveSpeed / 100);
+				else
+						transform.Translate (-1 * Vector2.up * moveSpeed / 100);
+		}
+	
+		void OnTriggerEnter2D (Collider2D collider)
+		{
+				//Change direction when enemy collides with something
+				movingUp = !movingUp;
 		}
 }
