@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCollision : MonoBehaviour {
+public class TriForceCollision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,10 +11,5 @@ public class EnemyCollision : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void OnTriggerEnter2D( Collider2D collider ){
-		Debug.Log (collider.name);
-
 	}
 }

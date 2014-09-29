@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
-	void Awake( ){
-		Screen.SetResolution(640, 480, false);
+	void Start( ){
+		Screen.SetResolution(640, 480, true);
 	}
 
 	public void MoveUp( ){

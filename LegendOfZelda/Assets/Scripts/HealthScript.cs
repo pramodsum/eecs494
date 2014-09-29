@@ -8,6 +8,8 @@ public class HealthScript : MonoBehaviour {
 	public int MaxHeartHalves = 6;
 	public int CurrentHeartHalves = 6;
 
+	public GameObject gameOverText;
+
 	// Use this for initialization
 	void Start () {
 		CurrentHeartHalves = MaxHeartHalves;
@@ -27,4 +29,13 @@ public class HealthScript : MonoBehaviour {
 			HeartHalves[CurrentHeartHalves].GetComponent<Image>().color = new Color(1,0,0,1);
 		}
 	}
+
+	void Update( ){
+		if(CurrentHeartHalves == 0){
+			gameOverText.SetActive(true);
+			if(Input.anyKey)
+				Application.LoadLevel(Application.loadedLevelName);
+		}
+	}
+	
 }

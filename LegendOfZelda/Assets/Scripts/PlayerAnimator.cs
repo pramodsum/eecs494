@@ -85,7 +85,13 @@ public class PlayerAnimator : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
+		if(collider.GetComponent<PhysicsObject>() == null) return;
 		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Immovable ) {
+			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
+			movementDirection = Vector2.zero;
+		}
+		if( collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Enemy){
+			Camera.main.GetComponent<HealthScript>().Hit();
 			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
 			movementDirection = Vector2.zero;
 		}

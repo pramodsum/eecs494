@@ -3,13 +3,19 @@ using System.Collections;
 
 public class SwordCollision : MonoBehaviour {
 
+	void Start( ) {
+		if( rigidbody2D.velocity == Vector2.zero ) StartCoroutine("Melee");
+	}
+
 	void OnTriggerEnter2D(Collider2D collider){
-		if(collider.tag == "Enemy"){
+		if(collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Enemy){
 			collider.GetComponent<EnemyDeath>().Hit();
-			Destroy(gameObject);
 		}
-		else if(collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Immovable){
-			Destroy(gameObject);
-		}
+		Destroy(gameObject);
+	}
+
+	IEnumerator Melee(){
+		yield return new WaitForSeconds(0.5f);
+		Destroy(gameObject);
 	}
 }

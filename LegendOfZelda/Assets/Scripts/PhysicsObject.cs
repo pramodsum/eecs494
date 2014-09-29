@@ -3,7 +3,8 @@ using System.Collections;
 
 public enum PhysicsObjectType {
 	Movable,
-	Immovable
+	Immovable,
+	Enemy
 }
 
 public class PhysicsObject : MonoBehaviour {

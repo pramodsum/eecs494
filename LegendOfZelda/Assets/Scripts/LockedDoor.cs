@@ -14,8 +14,9 @@ public class LockedDoor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
+		Debug.Log ("We collided!");
 		if( collider.tag == "Player" && Camera.main.GetComponent<Inventory>().HasKey()){
-			collider.GetComponent<Inventory>().AmountOfKeys--;
+			Camera.main.GetComponent<Inventory>().AmountOfKeys--;
 			OpenDoorObject.SetActive(true);
 			gameObject.SetActive(false);
 		}
