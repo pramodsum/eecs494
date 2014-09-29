@@ -9,11 +9,9 @@ public class BatAnimator : MonoBehaviour
 		const  float DefaultMovespeed = 7.5f;
 		public float moveSpeed;
 		public bool movingUp = false;
-		int count = 0;
 		public int MAX_COUNT = 200;
-		Vector3 colliderPosition;
-	
-	
+	Vector2 movementDirection;
+
 		// Use this for initialization
 		void Start ()
 		{
@@ -28,20 +26,30 @@ public class BatAnimator : MonoBehaviour
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
-				//Sprite movement animations
-				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
-				index = index % sprites.Length;
-				spriteRenderer.sprite = sprites [index];
+			
+			//Sprite walking animations
+			int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
+			index = index % sprites.Length;
+			spriteRenderer.sprite = sprites [index];
+			if (movingUp)
+				movementDirection = Vector2.up;
+			else 
+				movementDirection = -Vector2.up;
 
-				if (movingUp)
-						transform.Translate (Vector2.up * moveSpeed / 100);
-				else
-						transform.Translate (-1 * Vector2.up * moveSpeed / 100);
+			
+			rigidbody2D.velocity = movementDirection * moveSpeed;
 		}
 	
 		void OnTriggerEnter2D (Collider2D collider)
 		{
-				//Change direction when enemy collides with something
-				movingUp = !movingUp;
+		if( collider.tag == "Player"){
+			Camera.main.GetComponent<HealthScript>().Hit();
+		}
+		if(collider.tag != "Weapon"){
+			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
+			movementDirection = Vector2.zero;
+			//Change direction when enemy collides with something
+			movingUp = !movingUp;
+		}
 		}
 }

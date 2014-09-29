@@ -393,15 +393,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeartHalves:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 100026}
+  - {fileID: 100030}
+  - {fileID: 100008}
+  - {fileID: 100006}
+  - {fileID: 100032}
+  - {fileID: 100024}
   MaxHeartHalves: 6
   CurrentHeartHalves: 6
-  gameOverText: {fileID: 0}
+  gameOverText: {fileID: 100020}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

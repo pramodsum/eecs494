@@ -6,24 +6,43 @@ public class SlimeAnimator : MonoBehaviour
 		public float moveSpeed;
 		public int direction; // { up, down, right, left }
 		Vector3 colliderPosition;
-	
+
+	Vector2 movementDirection;
+	float deltaTime = 0;
+
 		// Update is called once per frame
 		void FixedUpdate ()
 		{		
-				if (direction == 0)
-						transform.Translate (Vector2.up * moveSpeed / 100);
-				else if (direction == 1)
-						transform.Translate (-1 * Vector2.up * moveSpeed / 100);
-				else if (direction == 2)
-						transform.Translate (Vector2.right * moveSpeed / 100);
-				else 
-						transform.Translate (-1 * Vector2.right * moveSpeed / 100);
+		deltaTime += Time.fixedDeltaTime;
+		if( deltaTime > 3.0f){
+			direction = Random.Range (0, 3);
+			deltaTime = 0f;
+		}
+
+		if (direction == 0)
+			movementDirection = Vector2.up;
+		else if (direction == 1)
+			movementDirection = -Vector2.up;
+		else if (direction == 2)
+			movementDirection = Vector2.right;
+		else 
+			movementDirection = -Vector2.right;
+		
+		rigidbody2D.velocity = movementDirection * moveSpeed;
 		}
 	
 	
 		void OnTriggerEnter2D (Collider2D collider)
 		{
-				//Change direction when enemy collides with something
-				direction = Random.Range (0, 3);
+		if( collider.tag == "Player"){
+			Camera.main.GetComponent<HealthScript>().Hit();
+		}
+		if(collider.tag != "Weapon"){
+			transform.position -= (new Vector3(movementDirection.x, movementDirection.y, 0)) * .2f;
+			movementDirection = Vector2.zero;
+			//Change direction when enemy collides with something
+			direction += 1;
+			direction %= 4;
+		}
 		}
 }

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 1
-  Loot: {fileID: 100000, guid: cd300aef303454debb7e92c8233189ab, type: 2}
+  Loot: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

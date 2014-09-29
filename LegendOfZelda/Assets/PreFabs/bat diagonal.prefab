@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8053b350bf5146a6a63345c14dfd116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectType: 1
+  ObjectType: 3
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d31b3f09ae5480fbbe985e0a021831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShutDoorObject: {fileID: 0}
   HitPoints: 1
+  Loot: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
