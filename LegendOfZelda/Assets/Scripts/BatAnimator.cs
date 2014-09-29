@@ -28,7 +28,7 @@ public class BatAnimator : MonoBehaviour
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
-				//Sprite walking animations
+				//Sprite movement animations
 				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 				index = index % sprites.Length;
 				spriteRenderer.sprite = sprites [index];
