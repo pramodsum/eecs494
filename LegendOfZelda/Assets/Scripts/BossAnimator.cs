@@ -1,39 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BatAnimator : MonoBehaviour
+public class BossAnimator : MonoBehaviour
 {
 		public Sprite[] sprites;
 		public float framesPerSecond;
 		private SpriteRenderer spriteRenderer;
-		const  float DefaultMovespeed = 7.5f;
 		public float moveSpeed;
-		public bool movingUp = false;
-		public int MAX_COUNT = 200;
-		Vector2 movementDirection;
-
+		public int direction; // { right, left }
+		Vector3 colliderPosition;
+		public Vector2 faceDirection = -Vector2.right;
+		float deltaTime = 0;
+	
 		// Use this for initialization
 		void Start ()
 		{
 				spriteRenderer = renderer as SpriteRenderer;
 		}
-	 
+	
+		void Update ()
+		{
+		
+		}
+	
 		// Update is called once per frame
 		void FixedUpdate ()
 		{
-			
+				deltaTime += Time.fixedDeltaTime;
+				if (deltaTime > 5.0f) {
+						//Change direction
+						faceDirection = Vector2.zero;
+						direction += 1;
+						direction %= 2;
+						deltaTime = 0f;
+				}
+		
 				//Sprite walking animations
 				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 				index = index % sprites.Length;
 				spriteRenderer.sprite = sprites [index];
-				if (movingUp)
-						movementDirection = Vector2.up;
-				else 
-						movementDirection = -Vector2.up;
-
-			
-				rigidbody2D.velocity = movementDirection * moveSpeed;
+				if (direction == 0)
+						faceDirection = Vector2.right;
+				else if (direction == 1)
+						faceDirection = -Vector2.right;
+		
+				rigidbody2D.velocity = faceDirection * moveSpeed;
 		}
+	
 	
 		void OnTriggerEnter2D (Collider2D collider)
 		{
@@ -41,10 +54,11 @@ public class BatAnimator : MonoBehaviour
 						Camera.main.GetComponent<HealthScript> ().Hit ();
 				}
 				if (collider.tag != "Weapon") {
-						transform.position -= (new Vector3 (movementDirection.x, movementDirection.y, 0)) * .2f;
-						movementDirection = Vector2.zero;
+						transform.position -= (new Vector3 (faceDirection.x, faceDirection.y, 0)) * .2f;
+						faceDirection = Vector2.zero;
 						//Change direction when enemy collides with something
-						movingUp = !movingUp;
+						direction += 1;
+						direction %= 2;
 				}
 		}
 }
