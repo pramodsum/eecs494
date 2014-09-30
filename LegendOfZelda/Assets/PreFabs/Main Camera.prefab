@@ -401,6 +401,7 @@ MonoBehaviour:
   - {fileID: 100024}
   MaxHeartHalves: 6
   CurrentHeartHalves: 6
+  GodMode: 0
   gameOverText: {fileID: 100020}
 --- !u!114 &11400004
 MonoBehaviour:
