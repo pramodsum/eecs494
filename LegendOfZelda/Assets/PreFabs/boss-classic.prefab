@@ -129,7 +129,7 @@ MonoBehaviour:
   attack: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack2: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack3: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-  shootSpeed: 7.5
+  shootSpeed: 10
   shootAngle: 0
 --- !u!212 &21200000
 SpriteRenderer:
