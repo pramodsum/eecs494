@@ -4387,7 +4387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 50
 --- !u!114 &215786122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12326,6 +12326,7 @@ MonoBehaviour:
   - {fileID: 382649947}
   MaxHeartHalves: 6
   CurrentHeartHalves: 6
+  GodMode: 0
   gameOverText: {fileID: 1538256984}
 --- !u!114 &664776528
 MonoBehaviour:
@@ -15470,7 +15471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 48
 --- !u!1001 &841556736
 Prefab:
   m_ObjectHideFlags: 0
@@ -20542,7 +20543,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 39
 --- !u!1 &1044388596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23393,7 +23394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 41
 --- !u!114 &1179416926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28059,7 +28060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 49
 --- !u!1 &1431182816
 GameObject:
   m_ObjectHideFlags: 0
@@ -29855,7 +29856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
 --- !u!1 &1533325763
 GameObject:
   m_ObjectHideFlags: 0
@@ -33635,8 +33636,8 @@ GameObject:
   - 61: {fileID: 1726931928}
   - 50: {fileID: 1726931927}
   - 114: {fileID: 1726931933}
-  - 114: {fileID: 1726931932}
   - 114: {fileID: 1726931934}
+  - 114: {fileID: 1726931932}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36335,7 +36336,7 @@ Transform:
   - {fileID: 2045937105}
   - {fileID: 1326391956}
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 42
 --- !u!1 &1916292293
 GameObject:
   m_ObjectHideFlags: 0

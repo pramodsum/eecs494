@@ -13,7 +13,6 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400008}
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Player
@@ -177,19 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 100000, guid: 9b9711998fb3340179c5954608d64a18, type: 2}
   shootSpeed: 7.5
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcc68972bd61499395e4ad5be29a43e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmountOfKeys: 0
-  KeyText: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
