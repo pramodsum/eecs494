@@ -18,7 +18,7 @@ public class CustomEnemyAttack : MonoBehaviour
 		void FixedUpdate ()
 		{
 				deltaTime += Time.fixedDeltaTime;
-				if (deltaTime > 0.5f) {
+				if (deltaTime > 1f) {
 						deltaTime = 0;
 
 						//Up
