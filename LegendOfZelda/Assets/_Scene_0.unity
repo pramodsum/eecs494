@@ -4403,7 +4403,6 @@ MonoBehaviour:
   attack: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack2: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack3: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-<<<<<<< HEAD
   shootSpeed: 15
 --- !u!1 &225747228
 GameObject:
@@ -4553,10 +4552,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-=======
-  shootSpeed: 10
-  shootAngle: 0
->>>>>>> FETCH_HEAD
 --- !u!1 &227558345
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,11 +4694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 51
-=======
-  m_RootOrder: 52
->>>>>>> FETCH_HEAD
 --- !u!1 &237682003
 GameObject:
   m_ObjectHideFlags: 0
@@ -33739,11 +33730,7 @@ Transform:
   m_Children:
   - {fileID: 1259899366}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 31
-=======
-  m_RootOrder: 35
->>>>>>> FETCH_HEAD
 --- !u!114 &1726931933
 MonoBehaviour:
   m_ObjectHideFlags: 0

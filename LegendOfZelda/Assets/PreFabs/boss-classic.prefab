@@ -129,15 +129,7 @@ MonoBehaviour:
   attack: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack2: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
   attack3: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-<<<<<<< HEAD
-<<<<<<< HEAD
   shootSpeed: 15
-=======
-=======
->>>>>>> FETCH_HEAD
-  shootSpeed: 10
-  shootAngle: 0
->>>>>>> FETCH_HEAD
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
