@@ -16,8 +16,10 @@ public class HealthScript : MonoBehaviour {
 	}
 
 	public void Hit( ){
-		if( CurrentHeartHalves > 0 && !GodMode) CurrentHeartHalves--;
-		HeartHalves[CurrentHeartHalves].GetComponent<Image>().color = new Color(0,0,0,0);
+		if( CurrentHeartHalves > 0 && !GodMode) {
+			CurrentHeartHalves--;
+			HeartHalves[CurrentHeartHalves].GetComponent<Image>().color = new Color(0,0,0,0);
+		}
 	}
 
 	public void Heal(int amount){

@@ -11,7 +11,8 @@ public class SwordCollision : MonoBehaviour {
 		if(collider.GetComponent<PhysicsObject>().ObjectType == PhysicsObjectType.Enemy){
 			collider.GetComponent<EnemyDeath>().Hit();
 		}
-		Destroy(gameObject);
+		if(collider.tag != "Water")
+			Destroy(gameObject);
 	}
 
 	IEnumerator Melee(){

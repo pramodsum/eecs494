@@ -15,6 +15,7 @@ public class EnemyAttackCollision : MonoBehaviour
 				if (po.ObjectType == PhysicsObjectType.Player) {
 						Camera.main.GetComponent<HealthScript> ().Hit ();
 				}
+		if(collider.tag != "Water")
 			Destroy (gameObject);
 
 		}
