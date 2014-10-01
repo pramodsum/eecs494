@@ -33699,6 +33699,12 @@ MonoBehaviour:
   - {fileID: 21300014, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
   - {fileID: 21300008, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
   - {fileID: 21300016, guid: 7fbd6551e24944495a9e40f1ad1925a3, type: 3}
+  godSprites:
+  - {fileID: 21300000, guid: da92783b6b3634199ad947cd050e80e2, type: 3}
+  - {fileID: 21300000, guid: da92783b6b3634199ad947cd050e80e2, type: 3}
+  - {fileID: 21300000, guid: e2c5f99c0ccfc432eb6a14abf68ed1cb, type: 3}
+  - {fileID: 21300000, guid: 67f10a0d317494bac9e19f753747c341, type: 3}
+  godMode: 0
   framesPerSecond: 10
   movementDirection: {x: 0, y: 0}
   faceDirection: {x: 0, y: 0}
