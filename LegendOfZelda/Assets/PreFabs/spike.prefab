@@ -12,12 +12,11 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: boss-classic
+  m_Name: spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2191505, y: 43.6114082, z: 0}
+  m_LocalPosition: {x: -5.58001184, y: 36.0221901, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +47,7 @@ Rigidbody2D:
   m_FixedAngle: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_SleepingMode: 2
+  m_SleepingMode: 1
   m_CollisionDetection: 0
 --- !u!61 &6100000
 BoxCollider2D:
@@ -59,27 +58,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .800000012, y: .800000012}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c34cffdaf9a34f4ca0bfad7373fe0fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 250e83960b7e544158b0b2aca8209165, type: 3}
-  - {fileID: 21300000, guid: c4260f85934d640a68dfdc209d83f5f0, type: 3}
-  framesPerSecond: 5
-  moveSpeed: 2
-  direction: 1
-  faceDirection: {x: -1, y: -0}
---- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db7e9cd9ab5d4648ab41e3e6a28d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400004
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -101,9 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d31b3f09ae5480fbbe985e0a021831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 5
-  Loot: {fileID: 100000, guid: cd300aef303454debb7e92c8233189ab, type: 2}
---- !u!114 &11400006
+  HitPoints: 1
+  Loot: {fileID: 0}
+--- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -115,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectType: 3
---- !u!114 &11400008
+--- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,13 +104,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e372eb88494754198a813ff037839292, type: 3}
+  m_Script: {fileID: 11500000, guid: b3ca7488378ec4ebeb74b554ffc8b987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-  attack2: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-  attack3: {fileID: 100000, guid: a213382aa6dd14038bcec732241a496f, type: 2}
-  shootSpeed: 15
+  movementDirection: {x: -1, y: -0}
+  playerClose: 0
+  position: {x: 0, y: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -148,9 +128,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 740504383
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 250e83960b7e544158b0b2aca8209165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a07c87cc224904150bd70f05fdc0e0f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
