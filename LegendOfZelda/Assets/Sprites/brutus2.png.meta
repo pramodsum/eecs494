@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 04be4c04e825742438083dd08feb3299
+guid: cd565ecebedd447f8bbad23d382284d4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 57
+    21300000: brutus2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
