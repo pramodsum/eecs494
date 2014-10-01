@@ -6,9 +6,8 @@ public class BoomerangEnemyAnimator : MonoBehaviour
 		public Sprite[] sprites;
 		public float framesPerSecond;
 		private SpriteRenderer spriteRenderer;
-		public float moveSpeed;
+		public float moveSpeed = 4.8f;
 		public int direction; // { up, down, right, left }
-		Vector3 colliderPosition;
 		public Vector2 movementDirection = -Vector2.right;
 		float deltaTime = 0;
 		public GameObject attack;
@@ -33,14 +32,14 @@ public class BoomerangEnemyAnimator : MonoBehaviour
 				//Sprite walking animations
 				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 				
-//				if (direction < 2) {
+		if (direction < 2) {
 				index = index % sprites.Length % 2;
 				spriteRenderer.sprite = sprites [direction * 2 + index];
-//				} else if (direction == 3) {
-//						spriteRenderer.sprite = sprites [direction + 4];
-//				} else {
-//						spriteRenderer.sprite = sprites [direction + 4];
-//				}
+				} else if (direction == 2) {
+						spriteRenderer.sprite = sprites [direction + 2];
+				} else {
+						spriteRenderer.sprite = sprites [direction + 2];
+			}
 
 				if (direction == 0) 
 						movementDirection = Vector2.up;
@@ -69,7 +68,8 @@ public class BoomerangEnemyAnimator : MonoBehaviour
 						Camera.main.GetComponent<HealthScript> ().Hit ();
 				}
 				if (collider.tag != "Weapon") {
-						transform.position -= (new Vector3 (movementDirection.x, movementDirection.y, 0)) * .2f;
+			Debug.Log ("Collided!");
+						transform.position -= (new Vector3 (movementDirection.x, movementDirection.y, 0)) * .3f;
 						movementDirection = Vector2.zero;
 						//Change direction when enemy collides with something
 						direction += 1;

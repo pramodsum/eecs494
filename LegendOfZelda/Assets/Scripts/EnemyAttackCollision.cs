@@ -10,9 +10,12 @@ public class EnemyAttackCollision : MonoBehaviour
 	
 		void OnTriggerEnter2D (Collider2D collider)
 		{
-				Destroy (gameObject);
-				if (collider.GetComponent<PhysicsObject> ().ObjectType == PhysicsObjectType.Player) {
+		PhysicsObject po = collider.GetComponent<PhysicsObject>() as PhysicsObject;
+		if( po == null ) return;
+				if (po.ObjectType == PhysicsObjectType.Player) {
 						Camera.main.GetComponent<HealthScript> ().Hit ();
 				}
+			Destroy (gameObject);
+
 		}
 }

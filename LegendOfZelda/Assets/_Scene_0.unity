@@ -2528,7 +2528,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
 --- !u!1 &138248434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d72202e9504d47a8adc7aa8e89241c1, type: 3}
   - {fileID: 21300000, guid: 168eaa3963d394290bd09a4e0f38de63, type: 3}
   framesPerSecond: 2
-  moveSpeed: 2
+  moveSpeed: 1
   direction: 1
   movementDirection: {x: -1, y: -0}
   attack: {fileID: 100000, guid: 273ae22345ff34951972927d40496bce, type: 2}
@@ -4477,8 +4477,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .800000012, y: .800000012}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .800000012, y: .600000024}
+  m_Center: {x: 0, y: -.0500000007}
 --- !u!114 &225747233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4537,7 +4537,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 740504383
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ac19d8dc95e294dd88f7188e6dd8f500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6067,7 +6067,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
 --- !u!1 &284761071
 GameObject:
   m_ObjectHideFlags: 0
@@ -9878,6 +9878,10 @@ Prefab:
       propertyPath: m_Size.y
       value: .800000012
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 1b00c844da6704bc69d764efecef5fa2, type: 2}
+      propertyPath: WatchDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b00c844da6704bc69d764efecef5fa2, type: 2}
   m_RootGameObject: {fileID: 1179416918}
@@ -10104,7 +10108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
 --- !u!1 &563123026
 GameObject:
   m_ObjectHideFlags: 0
@@ -11115,7 +11119,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0bbba1125910f4d06b5917adfc4c41b1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.97250009
+      value: -2.41330004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0bbba1125910f4d06b5917adfc4c41b1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11139,7 +11143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0bbba1125910f4d06b5917adfc4c41b1, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bbba1125910f4d06b5917adfc4c41b1, type: 2}
@@ -20437,7 +20441,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d72202e9504d47a8adc7aa8e89241c1, type: 3}
   - {fileID: 21300000, guid: 168eaa3963d394290bd09a4e0f38de63, type: 3}
   framesPerSecond: 2
-  moveSpeed: 2
+  moveSpeed: 1
   direction: 0
   movementDirection: {x: -1, y: -0}
   attack: {fileID: 100000, guid: 273ae22345ff34951972927d40496bce, type: 2}
@@ -20468,8 +20472,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .800000012, y: .800000012}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .800000012, y: .600000024}
+  m_Center: {x: 0, y: -.0500000007}
 --- !u!114 &1036433037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20528,7 +20532,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 740504383
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ac19d8dc95e294dd88f7188e6dd8f500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20947,7 +20951,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
 --- !u!1001 &1067922011
 Prefab:
   m_ObjectHideFlags: 0
@@ -22362,7 +22366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
 --- !u!1 &1138215800
 GameObject:
   m_ObjectHideFlags: 0
@@ -23407,9 +23411,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ca7488378ec4ebeb74b554ffc8b987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatchDirection: 1
   movementDirection: {x: -1, y: -0}
   playerClose: 0
-  position: {x: 0, y: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  travelDistance: 0
 --- !u!1 &1187952472
 GameObject:
   m_ObjectHideFlags: 0
@@ -28982,7 +28988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
 --- !u!1 &1485257087
 GameObject:
   m_ObjectHideFlags: 0
@@ -31427,7 +31433,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
 --- !u!1 &1593213757
 GameObject:
   m_ObjectHideFlags: 0
@@ -33726,12 +33732,12 @@ Transform:
   m_PrefabInternal: {fileID: 620483052}
   m_GameObject: {fileID: 1726931926}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -.111660004, y: -2.97250009, z: -2}
+  m_LocalPosition: {x: -.111660004, y: -2.41330004, z: -2}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children:
   - {fileID: 1259899366}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 24
 --- !u!114 &1726931933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33746,6 +33752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 100000, guid: 9b9711998fb3340179c5954608d64a18, type: 2}
   shootSpeed: 7.5
+  existingAttack: {fileID: 0}
 --- !u!114 &1726931934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35565,7 +35572,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d72202e9504d47a8adc7aa8e89241c1, type: 3}
   - {fileID: 21300000, guid: 168eaa3963d394290bd09a4e0f38de63, type: 3}
   framesPerSecond: 2
-  moveSpeed: 2
+  moveSpeed: 1
   direction: 1
   movementDirection: {x: -1, y: -0}
   attack: {fileID: 100000, guid: 273ae22345ff34951972927d40496bce, type: 2}
@@ -35596,8 +35603,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .800000012, y: .800000012}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .800000012, y: .600000024}
+  m_Center: {x: 0, y: -.0500000007}
 --- !u!114 &1835647964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35656,7 +35663,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 740504383
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ac19d8dc95e294dd88f7188e6dd8f500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
