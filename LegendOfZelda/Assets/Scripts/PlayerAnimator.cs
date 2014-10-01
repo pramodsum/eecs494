@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerAnimator : MonoBehaviour
 {
 		public Sprite[] sprites;
+		public Sprite[] godSprites;
+		public bool godMode = false;
 		public float framesPerSecond;
 		private SpriteRenderer spriteRenderer;
 		const  float DefaultMovespeed = 4.8f;
@@ -45,6 +47,18 @@ public class PlayerAnimator : MonoBehaviour
 						directionIndex = 0;
 				}
 
+
+				//Enable God Mode
+				if (Input.GetKeyDown (KeyCode.I)) {
+						if (godMode) {
+								godMode = false;
+								Camera.main.GetComponent<HealthScript> ().GodMode = false;
+						} else {
+								godMode = true;
+								Camera.main.GetComponent<HealthScript> ().GodMode = true;
+						}
+				}
+
 		}
 	
 		// Update is called once per frame
@@ -60,11 +74,19 @@ public class PlayerAnimator : MonoBehaviour
 						!Input.GetKey (KeyCode.DownArrow)) {
 						movementDirection = Vector2.zero;
 				}
+
 				//Sprite walking animations
-				int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
-				index = index % sprites.Length % 2;
-				spriteRenderer.sprite = sprites [directionIndex * 2 + index];
-				Vector2 velocity = movementDirection * moveSpeed;
+				Vector2 velocity;
+				if (godMode) {
+						spriteRenderer.sprite = godSprites [directionIndex];
+						velocity = movementDirection * moveSpeed;
+				} else {
+						int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
+						index = index % sprites.Length % 2;
+						spriteRenderer.sprite = sprites [directionIndex * 2 + index];
+						velocity = movementDirection * moveSpeed;
+				}
+
 				if (movementDirection == Vector2.up || movementDirection == -Vector2.up) {
 						float remainder = Mathf.Abs (transform.position.x % .5f);
 						Debug.Log (remainder);
